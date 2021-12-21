@@ -1,16 +1,16 @@
-# Colorls for zsh.
+# exa for zsh.
 
-# Only apply aliases if colorls is installed
-if hash colorls 2>/dev/null
+# Only apply aliases if exa is installed
+if hash exa 2>/dev/null
 then
-    alias lc='colorls'                               # Colorls with no options
-    alias l='colorls -l --sort-dirs'                 # List
-    alias ll='colorls -lA --git-status --sort-dirs'  # List, show almost all files (excludes ./ and ../)
-    alias la='colorls -la --sort-dirs'               # List, show all files
-    alias lt='colorls -lt  --git-status'             # List, sort by modification time (newest first)
-    alias lS='colorls -lS  --git-status'             # List, sort by size (largest first)
-    alias lr='colorls --tree=5'                      # Show tree heirarchy, capped at depth 5 just in case
-    alias lx='colorls -lAX --git-status'             # List, Sort by file type
+    alias lc='exa'                               # exa with no options
+    alias l='exa -l --group-directories-first'                 # List
+    alias ll='exa -la  --git --group-directories-first'  # List, show almost all files (excludes ./ and ../)
+    alias la='exa -la --group-directories-first'               # List, show all files
+    alias lt='exa -l -t modified --git'             # List, sort by modification time (newest first)
+    alias lS='exa -l -s size --git'             # List, sort by size (largest first)
+    alias lr='exa --tree'                      # Show tree heirarchy, capped at depth 5 just in case
+    alias lx='exa -la -s extension --git'             # List, Sort by file type
 else
-    alias ls='printf "Please install colorls to enable the zsh-colorls plugin\n\n" && ls --color=tty'
+    alias ls='printf "Please install exa to enable the zsh-exa plugin\n\n" && ls --color=tty'
 fi
