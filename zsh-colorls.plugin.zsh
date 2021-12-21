@@ -3,7 +3,7 @@
 # Only apply aliases if exa is installed
 if hash exa 2>/dev/null
 then
-    alias lc='exa'                               # exa with no options
+    alias lc='exa --icons'                               # exa with no options
     alias l='exa -l --icons --group-directories-first'                 # List
     alias ll='exa -la  --git --icons --group-directories-first'  # List, show almost all files (excludes ./ and ../)
     alias la='exa -la --icons --group-directories-first'               # List, show all files
